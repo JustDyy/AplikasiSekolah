@@ -1,35 +1,49 @@
-// import React from 'react';
-// import {SafeAreaView, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StatusBar, Image} from 'react-native';
+import TextInputNisn from '../../src/components/TextInputNisn';
+import React, {useState, useEffect} from 'react';
 
-// const UselessTextInput = () => {
-//   const [text, onChangeText] = React.useState('');
-//   const [number, onChangeNumber] = React.useState(null);
+export default function LoginScreen() {
+  const [nisn, setNisn] = useState('');
+  const [password, setPassword] = useState('');
 
-//   return (
-//     <SafeAreaView>
-//       <TextInput
-//         style={styles.input}
-//         onChangeText={onChangeText}
-//         value={text}
-//       />
-//       <TextInput
-//         style={styles.input}
-//         onChangeText={onChangeNumber}
-//         value={number}
-//         placeholder="useless placeholder"
-//         keyboardType="numeric"
-//       />
-//     </SafeAreaView>
-//   );
-// };
+  return (
+    <View style={{flex: 1, backgroundColor: '#070B30'}}>
+      <StatusBar backgroundColor="#070B30" barStyle="dark-content" />
+      <View
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 0,
+        }}>
+        <Image
+          source={require('../../src/font.png')}
+          style={{width: 350, height: 90}}
+        />
+        <View style={{marginLeft: 10}}>
+          <Text style={{fontSize: 25, fontWeight: 'bold'}}>
+            Welcome to Dulearn!
+          </Text>
+          <Text style={{fontSize: 15, fontWeight: 'bold'}}>
+            Please sign-in to your account and start the adventure
+          </Text>
+        </View>
+      </View>
 
-// const styles = StyleSheet.create({
-//   input: {
-//     height: 40,
-//     margin: 12,
-//     borderWidth: 1,
-//     padding: 10,
-//   },
-// });
-
-// export default UselessTextInput;
+      <TextInputNisn
+        state={nisn}
+        set={setNisn}
+        Icon="user"
+        placeholder="Masukan NISN"
+        isPassword={false}
+      />
+      <TextInputNisn
+        state={password}
+        set={setPassword}
+        Icon="lock"
+        placeholder="Masukan password"
+        isPassword={true}
+      />
+    </View>
+  );
+}
