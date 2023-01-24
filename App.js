@@ -1,7 +1,17 @@
 import Icon from 'react-native-vector-icons/FontAwesome';
 import React, {useState, useEffect} from 'react';
-import {View, Text, Image, StatusBar, TextInput} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StatusBar,
+  TextInput,
+  TouchableOpacity,
+  
+} from 'react-native';
 import TextInputNisn from './src/components/TextInputNisn';
+import LoginButton from './src/components/LoginButton';
+import Menu from './src/components/Menu';
 
 export default function App() {
   const [nisn, setNisn] = useState('');
@@ -31,20 +41,24 @@ export default function App() {
         </View>
       </View>
 
-      <TextInputNisn
-        state={nisn}
-        set={setNisn}
-        Icon="user"
-        placeholder="Masukan NISN"
-        isPassword={false}
-      />
-      <TextInputNisn
-        state={password}
-        set={setPassword}
-        Icon="lock"
-        placeholder="Masukan password"
-        isPassword={true}
-      />
+      <View>
+        <TextInputNisn
+          state={nisn}
+          set={setNisn}
+          Icon="user"
+          placeholder="NISN"
+          isPassword={false}
+        />
+        <TextInputNisn
+          state={password}
+          set={setPassword}
+          Icon="lock"
+          placeholder="Password"
+          isPassword={true}
+        />
+        <LoginButton text="Login" color="#494C9F" />
+        <Menu SignupText="Registrasi Cuy" />
+      </View>
     </View>
   );
 }
