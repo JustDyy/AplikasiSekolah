@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Icon from 'react-native-vector-icons/FontAwesome';
 import React, {useState, useEffect} from 'react';
 import {
@@ -7,7 +8,6 @@ import {
   StatusBar,
   TextInput,
   TouchableOpacity,
-  
 } from 'react-native';
 import TextInputNisn from './src/components/TextInputNisn';
 import LoginButton from './src/components/LoginButton';
@@ -16,6 +16,19 @@ import Menu from './src/components/Menu';
 export default function App() {
   const [nisn, setNisn] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    console.log(`Nisn : ${nisn}, Password : ${password}`);
+    fetch(
+      `http://localhost:8000/api/auth/login?reg_num=${nisn}&password=${password}`,
+      {
+        method: 'POST',
+      },
+    )
+      .then(res => res.json())
+      .then(data => console.log(JSON.stringify(data)))
+      .catch(e => console.log(e));
+  };
 
   return (
     <View style={{flex: 1, backgroundColor: '#070B30'}}>
@@ -56,7 +69,7 @@ export default function App() {
           placeholder="Password"
           isPassword={true}
         />
-        <LoginButton text="Login" color="#494C9F" />
+        <LoginButton text="Login" color="#494C9F" handlePress={handleLogin} />
         <Menu SignupText="Registrasi Cuy" />
       </View>
     </View>

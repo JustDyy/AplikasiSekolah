@@ -10,11 +10,12 @@ import {
   SliderBase,
 } from 'react-native';
 
-function LoginButton(props) {
+function LoginButton({handlePress, color, text}) {
   return (
     <TouchableOpacity
+      onPress={handlePress}
       style={{
-        backgroundColor: props.color,
+        backgroundColor: color,
         paddingVertical: 14,
         marginTop: 30,
         marginHorizontal: 30,
@@ -28,7 +29,7 @@ function LoginButton(props) {
           textAlign: 'center',
           fontWeight: 'bold',
         }}>
-        {props.text}
+        {text}
       </Text>
     </TouchableOpacity>
   );

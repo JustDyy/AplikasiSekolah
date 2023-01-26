@@ -45,7 +45,10 @@ function TextInputNisn(props) {
             paddingLeft: 10,
           }}
           placeholder={props.placeholder}
-          onChange={text => props.set(text)}
+          onChangeText={text => {
+            props.set(text);
+            console.log(text);
+          }}
           secureTextEntry={props.isPassword}
         />
       </View>
