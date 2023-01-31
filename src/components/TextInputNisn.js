@@ -22,19 +22,20 @@ function TextInputNisn(props) {
           style={{
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: 'black',
+            backgroundColor: '#FCFCFF',
             width: 50,
             borderTopLeftRadius: 15,
             borderBottomLeftRadius: 15,
             paddingVertical: 15,
             elevation: 3,
           }}>
-          <Icon name={props.Icon} size={25} color="#bdbdbd" />
+          <Icon name={props.Icon} size={25} color="#5D5FEF" />
         </View>
         <TextInput
           value={props.state}
           style={{
-            backgroundColor: 'black',
+            backgroundColor: '#FCFCFF',
+            color: 'black',
             //marginHorizontal: 20,
             //borderRadius: 15,
             flex: 1,
@@ -45,6 +46,7 @@ function TextInputNisn(props) {
             paddingLeft: 10,
           }}
           placeholder={props.placeholder}
+          placeholderTextColor="#000"
           onChangeText={text => {
             props.set(text);
             console.log(text);

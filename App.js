@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {FlatGrid} from 'react-native-super-grid';
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -54,23 +55,41 @@ export default function App() {
         </View>
       </View>
 
-      <View>
-        <TextInputNisn
-          state={nisn}
-          set={setNisn}
-          Icon="user"
-          placeholder="NISN"
-          isPassword={false}
+      <View style={{height: 'auto'}}>
+        <FlatGrid
+          itemDimension={500}
+          data={[2]}
+          renderItem={({item}) => (
+            <View
+              style={{
+                backgroundColor: '#161719',
+                borderRadius: 30,
+                paddingTop: 10,
+              }}>
+              <TextInputNisn
+                color="black"
+                state={nisn}
+                set={setNisn}
+                Icon="user"
+                placeholder="NISN"
+                isPassword={false}
+              />
+              <TextInputNisn
+                state={password}
+                set={setPassword}
+                Icon="lock"
+                placeholder="Password"
+                isPassword={true}
+              />
+              <LoginButton
+                text="Login"
+                color="#494C9F"
+                handlePress={handleLogin}
+              />
+              <Menu SignupText="Registrasi Cuy" />
+            </View>
+          )}
         />
-        <TextInputNisn
-          state={password}
-          set={setPassword}
-          Icon="lock"
-          placeholder="Password"
-          isPassword={true}
-        />
-        <LoginButton text="Login" color="#494C9F" handlePress={handleLogin} />
-        <Menu SignupText="Registrasi Cuy" />
       </View>
     </View>
   );
