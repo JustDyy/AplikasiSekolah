@@ -44,7 +44,7 @@ export default function HomeScreen({navigation}) {
 
         <Text style={styles.judul}>Classes</Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate('sepuluhName')}>
+        <TouchableOpacity onPress={() => navigation.navigate("Xmat")}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textkelas}>X RPL</Text>
             <Image

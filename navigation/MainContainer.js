@@ -11,12 +11,15 @@ import React, {useState, useEffect} from 'react';
 //Screen
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
+import XmatScreen from './screens/XmatScreen';
+
 
 //namaScreen
 const homeName = 'Home';
+const loginName = 'login';
+const sepuluhName = 'Xmat'
 
 const Tab = createBottomTabNavigator();
-
 
 export default function MainContainer() {
   return (
@@ -24,7 +27,7 @@ export default function MainContainer() {
       <Tab.Navigator
         initialRouteName="login"
         screenOptions={{
-            headerShown: false,
+          headerShown: false,
           tabBarActiveTintColor: '#fff',
           tabBarInactiveTintColor: 'lightgray',
           tabBarActiveBackgroundColor: '#42489E',
@@ -50,6 +53,19 @@ export default function MainContainer() {
         <Tab.Screen
           name={homeName}
           component={HomeScreen}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <Icon
+                name={focused ? 'home' : 'home-alert-outline'}
+                size={20}
+                color="black"
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name={sepuluhName}
+          component={XmatScreen}
           options={{
             tabBarIcon: ({focused}) => (
               <Icon

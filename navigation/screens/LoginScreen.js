@@ -12,75 +12,73 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import FlatGrid from 'react-native-super-grid';
 import TextInputNisn from '../../src/components/TextInputNisn';
 import Menu from '../../src/components/Menu';
 import LoginButton from '../../src/components/LoginButton';
 import HomeScreen from './HomeScreen';
 
-
-storeData = async(value) =>{
-  try{
-    console.log("LOGIN")
-    await AsyncStorage.setItem('token_key',value)
-    getData()
+storeData = async value => {
+  try {
+    console.log('LOGIN');
+    await AsyncStorage.setItem('token_key', value);
+    getData();
     //const value = await
     AsyncStorage.getItem('token_key');
     //console.log("Token:"+value)
-  }catch (e){
-    console.log(e)
+  } catch (e) {
+    console.log(e);
   }
-}
+};
 
 getData = async () => {
-  try{
-    const value = await
-    AsyncStorage.getItem('token_key')
-    if(value !== null){
-      console.log("TOKEN :")
-      console.log(value)
+  try {
+    const value = await AsyncStorage.getItem('token_key');
+    if (value !== null) {
+      console.log('TOKEN :');
+      console.log(value);
     }
-  }catch (e){
+  } catch (e) {
     //error reading value
   }
-}
+};
 
-function kliklogin(nisn, password, nav){
-  if(!nisn || !password){
+function kliklogin(nisn, password, nav) {
+  if (!nisn || !password) {
     return Alert.alert('Error', 'NISN atau Password Tidak Boleh kosong');
   }
-  if(password.length < 8){
-    return Alert.alert('Error','Password harus 8 karakter');
+  if (password.length < 8) {
+    return Alert.alert('Error', 'Password harus 8 karakter');
   }
-  try{
-    console.log(nisn + password)
+  try {
+    console.log(nisn + password);
     const urllogin =
       'https://dulearn.rugefx.com/api/auth/login?' +
       new URLSearchParams({
         reg_num: nisn,
         password: password,
       });
-    fetch(urllogin,{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json'
+    fetch(urllogin, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
     })
-    .then((response) => response.json())
-    .then((json) =>{
-      console.log(json);
-      if(json.success != "Failed" ){
-        //console.log(json.data.result.accessToken)
-        storeData(json.data)
-        nav.navigate('Home')
-      }else{
-        alert(json.message)
-      }
-    })
-    .catch((e) => {
-      console.error(e)
-    })
-  }
-  catch (error){
+      .then(response => response.json())
+      .then(json => {
+        console.log(json);
+        if (json.success != 'Failed') {
+          //console.log(json.data.result.accessToken)
+          storeData(json.data);
+          nav.navigate('Home');
+        } else {
+          alert(json.message);
+        }
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  } catch (error) {
     Alert.alert('Error', error.message);
   }
 }
@@ -131,23 +129,35 @@ export default function App(props) {
         </View>
       </View>
 
-      <View>
-        <TextInputNisn
-          state={nisn}
-          set={setNisn}
-          Icon="user"
-          placeholder="NISN"
-          isPassword={false}
+      <View style={{height: 'auto'}}>
+        <FlatGrid
+          itemDimension={500}
+          data={[2]}
+          renderItem={({item}) => (
+            <View>
+              <TextInputNisn
+                state={nisn}
+                set={setNisn}
+                Icon="user"
+                placeholder="NISN"
+                isPassword={false}
+              />
+              <TextInputNisn
+                state={password}
+                set={setPassword}
+                Icon="lock"
+                placeholder="Password"
+                isPassword={true}
+              />
+              <LoginButton
+                text="Login"
+                color="#494C9F"
+                handlePress={() => kliklogin(nisn, password, props.navigation)}
+              />
+              <Menu SignupText="Registrasi" />
+            </View>
+          )}
         />
-        <TextInputNisn
-          state={password}
-          set={setPassword}
-          Icon="lock"
-          placeholder="Password"
-          isPassword={true}
-        />
-        <LoginButton text="Login" color="#494C9F" handlePress={() => kliklogin(nisn, password, props.navigation)} />
-        <Menu SignupText="Registrasi Cuy" />
       </View>
     </View>
   );
