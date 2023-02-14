@@ -1,9 +1,12 @@
 import * as React from 'react';
-import MainContainer from './navigation/MainContainer';
 import axios from 'axios';
+import { NavigationContainer } from '@react-navigation/native';
+import AuthNavigator from './src/navigation/AuthNavigator';
 
-function App() {
-  return <MainContainer />;
+export default function App(){
+  return(
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
+  );
 }
-
-export default App;
