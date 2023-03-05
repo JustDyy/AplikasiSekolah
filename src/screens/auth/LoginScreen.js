@@ -13,9 +13,9 @@ import {
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import FlatGrid from 'react-native-super-grid';
-import TextInputNisn from '../../src/components/TextInputNisn';
-import Menu from '../../src/components/Menu';
-import LoginButton from '../../src/components/LoginButton';
+import TextInputNisn from '../../components/TextInputNisn';
+import Menu from '../../components/Menu';
+import LoginButton from '../../components/LoginButton';
 import HomeScreen from './HomeScreen';
 import {route, color,image} from '../../constant';
 import logo from '../../Assets/font.png'

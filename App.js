@@ -1,12 +1,17 @@
 import * as React from 'react';
-import axios from 'axios';
-import { NavigationContainer } from '@react-navigation/native';
-import AuthNavigator from './src/navigation/AuthNavigator';
-
-export default function App(){
-  return(
+import {NavigationContainer} from '@react-navigation/native';
+import { SafeAreaView, Text } from 'react-native-safe-area-context';
+export default function App() {
+  return (
     <NavigationContainer>
-      <AuthNavigator />
+      <SafeAreaView
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Text>App</Text>
+        </SafeAreaView>
     </NavigationContainer>
   );
 }

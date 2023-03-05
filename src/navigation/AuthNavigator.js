@@ -1,6 +1,6 @@
-import react from "react";
+import react from 'react';
 import { createStackNavigator } from "@react-navigation/stack";
-import {LoginScreen, RegisScreen} from '../screens';
+import {LoginScreen} from '../screens/auth';
 import {ROUTES} from '../constant';
 
 const Stack = createStackNavigator();

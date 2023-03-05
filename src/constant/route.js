@@ -1,11 +1,13 @@
 export default {
     LOGIN : 'Login',
-    REGISTRASI : 'Register',
+    REGISTER : 'Register',
 
     HOME : 'Home',
     HOME_TAB : 'Home Tab',
     HOME_DRAWER : 'Home Drawer',
     SEARCH : 'cari',
-    PROFILE : 'My Profile'
+    PROFILE : 'My Profile',
+
+    ACCOUNT_SETTINGS : 'Account Settings',
 
 };
