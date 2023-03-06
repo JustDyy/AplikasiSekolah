@@ -114,16 +114,17 @@ export default function App(props) {
           justifyContent: 'center',
           alignItems: 'center',
           gap: 0,
+          marginBottom: 50,
         }}>
         <Image
           source={require('./../../src/font.png')}
           style={{width: 350, height: 90}}
         />
-        <View style={{marginLeft: 10}}>
-          <Text style={{fontSize: 25, fontWeight: 'bold'}}>
-            Welcome to Dulern!
+        <View style={{marginLeft: 30, marginRight: 30}}>
+          <Text style={{fontSize: 20, fontWeight: 'bold', color: 'white'}}>
+            Welcome to Dulern 👋
           </Text>
-          <Text style={{fontSize: 15, fontWeight: 'bold'}}>
+          <Text style={{fontSize: 15, fontWeight: 'thin', color: 'white'}}>
             Please sign-in to your account and start the adventure
           </Text>
         </View>
@@ -134,7 +135,12 @@ export default function App(props) {
           itemDimension={500}
           data={[2]}
           renderItem={({item}) => (
-            <View>
+            <View
+              style={{
+                backgroundColor: '#161719',
+                borderRadius: 30,
+                paddingTop: 10,
+              }}>
               <TextInputNisn
                 state={nisn}
                 set={setNisn}

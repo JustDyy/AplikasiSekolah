@@ -12,12 +12,15 @@ import React, {useState, useEffect} from 'react';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 import XmatScreen from './screens/XmatScreen';
-
+import Materi from './screens/Materi';
+import diskus from './screens/diskus';
 
 //namaScreen
 const homeName = 'Home';
 const loginName = 'login';
-const sepuluhName = 'Xmat'
+const sepuluhName = 'Xmat';
+const materi = 'materi';
+const Diskus = 'diskus';
 
 const Tab = createBottomTabNavigator();
 
@@ -66,6 +69,32 @@ export default function MainContainer() {
         <Tab.Screen
           name={sepuluhName}
           component={XmatScreen}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <Icon
+                name={focused ? 'home' : 'home-alert-outline'}
+                size={20}
+                color="black"
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name={materi}
+          component={Materi}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <Icon
+                name={focused ? 'home' : 'home-alert-outline'}
+                size={20}
+                color="black"
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name={Diskus}
+          component={diskus}
           options={{
             tabBarIcon: ({focused}) => (
               <Icon
