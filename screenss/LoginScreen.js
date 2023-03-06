@@ -13,10 +13,19 @@ import {
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import FlatGrid from 'react-native-super-grid';
+<<<<<<< HEAD
 import TextInputNisn from '../../src/components/TextInputNisn';
 import Menu from '../../src/components/Menu';
 import LoginButton from '../../src/components/LoginButton';
 import HomeScreen from './HomeScreen';
+=======
+import TextInputNisn from '../../components/TextInputNisn';
+import Menu from '../../components/Menu';
+import LoginButton from '../../components/LoginButton';
+import HomeScreen from './HomeScreen';
+import {route, color,image} from '../../constant';
+import logo from '../../Assets/font.png'
+>>>>>>> 8102252d34931c846967cb943948178bcd44d659
 
 storeData = async value => {
   try {
@@ -106,7 +115,11 @@ export default function App(props) {
   // };
 
   return (
+<<<<<<< HEAD
     <View style={{flex: 1, backgroundColor: '#070B30'}}>
+=======
+    <View style={{flex: 1, backgroundColor: color.col}}>
+>>>>>>> 8102252d34931c846967cb943948178bcd44d659
       <StatusBar backgroundColor="#070B30" barStyle="dark-content" />
       <View
         style={{
@@ -114,6 +127,7 @@ export default function App(props) {
           justifyContent: 'center',
           alignItems: 'center',
           gap: 0,
+<<<<<<< HEAD
           marginBottom: 50,
         }}>
         <Image
@@ -125,6 +139,18 @@ export default function App(props) {
             Welcome to Dulern 👋
           </Text>
           <Text style={{fontSize: 15, fontWeight: 'thin', color: 'white'}}>
+=======
+        }}>
+        <Image
+          source={require(image.logo)}
+          style={{width: 350, height: 90}}
+        />
+        <View style={{marginLeft: 10}}>
+          <Text style={{fontSize: 25, fontWeight: 'bold'}}>
+            Welcome to Dulern!
+          </Text>
+          <Text style={{fontSize: 15, fontWeight: 'bold'}}>
+>>>>>>> 8102252d34931c846967cb943948178bcd44d659
             Please sign-in to your account and start the adventure
           </Text>
         </View>
@@ -135,12 +161,16 @@ export default function App(props) {
           itemDimension={500}
           data={[2]}
           renderItem={({item}) => (
+<<<<<<< HEAD
             <View
               style={{
                 backgroundColor: '#161719',
                 borderRadius: 30,
                 paddingTop: 10,
               }}>
+=======
+            <View>
+>>>>>>> 8102252d34931c846967cb943948178bcd44d659
               <TextInputNisn
                 state={nisn}
                 set={setNisn}
