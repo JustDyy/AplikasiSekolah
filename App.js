@@ -1,9 +1,17 @@
 import * as React from 'react';
-import MainContainer from './navigation/MainContainer';
-import axios from 'axios';
-
-function App() {
-  return <MainContainer />;
+import {NavigationContainer} from '@react-navigation/native';
+import { SafeAreaView, Text } from 'react-native-safe-area-context';
+export default function App() {
+  return (
+    <NavigationContainer>
+      <SafeAreaView
+        style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Text>App</Text>
+        </SafeAreaView>
+    </NavigationContainer>
+  );
 }
-
-export default App;
