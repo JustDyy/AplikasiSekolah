@@ -16,9 +16,13 @@ import FlatGrid from 'react-native-super-grid';
 import TextInputNisn from '../../components/TextInputNisn';
 import Menu from '../../components/Menu';
 import LoginButton from '../../components/LoginButton';
-import HomeScreen from './HomeScreen';
-import {route, color,image} from '../../constant';
-import logo from '../../Assets/font.png'
+// import HomeScreen from './HomeScreen';
+
+import route from '../../constant/route';
+import color from '../../constant/color';
+import image from '../../constant/image';
+
+import logo from '../../Assets/font.png';
 
 storeData = async value => {
   try {
@@ -117,10 +121,7 @@ export default function App(props) {
           alignItems: 'center',
           gap: 0,
         }}>
-        <Image
-          source={require(image.logo)}
-          style={{width: 350, height: 90}}
-        />
+        <Image source={image.logo} style={{width: 350, height: 90}} />
         <View style={{marginLeft: 10}}>
           <Text style={{fontSize: 25, fontWeight: 'bold'}}>
             Welcome to Dulern!
