@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 import * as React from 'react';
 import {
   View,
@@ -9,7 +11,6 @@ import {
   ScrollView,
 } from 'react-native';
 
-<<<<<<< HEAD
 export default function HomeScreen({navigation}) {
   function _onPressButton() {
     Alert.alert('You tapped the button!');
@@ -19,15 +20,11 @@ export default function HomeScreen({navigation}) {
     Alert.alert('You long-pressed the button!');
   }
 
-=======
-export default function XmatScreen({navigation}) {
->>>>>>> 8102252d34931c846967cb943948178bcd44d659
   return (
     <>
       <View style={styles.pala}>
         <Image
           source={require('../../src/font.png')}
-<<<<<<< HEAD
           style={{
             width: 150,
             height: 30,
@@ -118,17 +115,11 @@ export default function XmatScreen({navigation}) {
           </View>
         </TouchableOpacity>
       </ScrollView>
-=======
-          style={{width: 150, height: 30}}
-        />
-      </View>
->>>>>>> 8102252d34931c846967cb943948178bcd44d659
     </>
   );
 }
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
   container: {
     paddingTop: 10,
     alignItems: 'center',
@@ -180,9 +171,4 @@ const styles = StyleSheet.create({
     padding: 20,
     color: 'white',
   },
-=======
-  pala: {
-    backgroundColor: '#161719',
-  },
->>>>>>> 8102252d34931c846967cb943948178bcd44d659
 });
