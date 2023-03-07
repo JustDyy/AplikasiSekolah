@@ -12,6 +12,7 @@ import {
 function TextInputNisn(props) {
   return (
     <View>
+    
       <View
         style={{
           flexDirection: 'row',
@@ -22,19 +23,19 @@ function TextInputNisn(props) {
           style={{
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: 'black',
+            backgroundColor: '#FCFCFF',
             width: 50,
             borderTopLeftRadius: 15,
             borderBottomLeftRadius: 15,
             paddingVertical: 15,
             elevation: 3,
           }}>
-          <Icon name={props.Icon} size={25} color="#bdbdbd" />
+          <Icon name={props.Icon} size={25} color="#5D5FE" />
         </View>
         <TextInput
           value={props.state}
           style={{
-            backgroundColor: 'black',
+            backgroundColor: '#FCFCFF',
             //marginHorizontal: 20,
             //borderRadius: 15,
             flex: 1,

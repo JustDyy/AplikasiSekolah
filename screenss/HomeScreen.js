@@ -4,10 +4,12 @@ import {
   Alert,
   StyleSheet,
   Text,
+  StatusBar,
   TouchableOpacity,
   Image,
   ScrollView,
 } from 'react-native';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 export default function HomeScreen({navigation}) {
   function _onPressButton() {
@@ -20,10 +22,19 @@ export default function HomeScreen({navigation}) {
 
   return (
     <>
+      <StatusBar
+        backgroundColor={Colors.transparent}
+        barStyle="light-content"></StatusBar>
       <View style={styles.pala}>
         <Image
           source={require('../../src/font.png')}
-          style={{width: 150, height: 30}}
+          style={{
+            width: 150,
+            height: 30,
+            marginTop: 10,
+            marginBottom: 10,
+            marginLeft: 10,
+          }}
         />
       </View>
       <ScrollView contentContainerStyle={styles.container}>
@@ -32,11 +43,11 @@ export default function HomeScreen({navigation}) {
             <Image
               source={require('../../src/Avatar.png')}
               style={{
-                position: 'absolute', 
+                position: 'absolute',
                 marginLeft: 20,
-                width:80,
-                height:110
-                }}
+                width: 80,
+                height: 110,
+              }}
             />
             <Text style={styles.buttonText}>Welcome Dulern</Text>
           </View>
@@ -44,7 +55,7 @@ export default function HomeScreen({navigation}) {
 
         <Text style={styles.judul}>Classes</Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate("Xmat")}>
+        <TouchableOpacity onPress={() => navigation.navigate('Xmat')}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textkelas}>X RPL</Text>
             <Image
@@ -93,7 +104,7 @@ export default function HomeScreen({navigation}) {
 
         <TouchableOpacity onPress={_onPressButton}>
           <View style={styles.buttonHeader}>
-            <Text style={styles.buttonText}>Welcome Dulern</Text>
+            <Text style={styles.buttonText}>Welcome Dulern👋</Text>
           </View>
         </TouchableOpacity>
       </ScrollView>
@@ -158,9 +169,8 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    textAlign:'center',
+    textAlign: 'center',
     padding: 20,
     color: 'white',
-    
   },
 });
