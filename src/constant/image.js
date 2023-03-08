@@ -1,6 +1,6 @@
 export default {
-    avatar : require ('../Assets/Avatar.png'),
-    kol1   : require ('../Assets/RPL1.png'),
-    kol2   : require ('../Assets/Rpl2.png'),
-    logo   : require ('../Assets/font.png'),
+  avatar: require('../Assets/img/Avatar.png'),
+  kol1: require('../Assets/img/RPL1.png'),
+  kol2: require('../Assets/img/Rpl2.png'),
+  logo: require('../Assets/img/font.png'),
 };

@@ -14,7 +14,7 @@ export default function XmatScreen({navigation}) {
     <>
       <View style={styles.pala}>
         <Image
-          source={require('../../src/font.png')}
+          source={require('../Assets/img/font.png')}
           style={{width: 150, height: 30}}
         />
       </View>

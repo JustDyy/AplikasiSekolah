@@ -1,3 +1,8 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
 import * as React from 'react';
 import {
   View,
@@ -11,7 +16,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 
-export default function HomeScreen({navigation}) {
+export default function Diskusi({navigation}) {
   function _onPressButton() {
     Alert.alert('You tapped the button!');
   }
@@ -24,7 +29,7 @@ export default function HomeScreen({navigation}) {
     <>
       <View style={styles.pala}>
         <Image
-          source={require('../../src/font.png')}
+          source={require('../Assets/img/font.png')}
           style={{
             width: 150,
             height: 30,
@@ -47,7 +52,7 @@ export default function HomeScreen({navigation}) {
             </Text>
 
             <Image
-              source={require('../../src/diskus.png')}
+              source={require('../Assets/img/diskus.png')}
               style={{
                 width: 303,
                 height: 210,
@@ -62,7 +67,7 @@ export default function HomeScreen({navigation}) {
           <View style={styles.buttonkelas1}>
             <Text style={styles.textmateri1}>Komentar...</Text>
             <Image
-              source={require('../../src/komentar.png')}
+              source={require('../Assets/img/komentar.png')}
               style={{
                 width: 303,
                 height: 53,

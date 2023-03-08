@@ -24,7 +24,7 @@ export default function HomeScreen({navigation}) {
     <>
       <View style={styles.pala}>
         <Image
-          source={require('../../src/font.png')}
+          source={require('../Assets/img/font.png')}
           style={{
             width: 150,
             height: 30,
@@ -41,7 +41,7 @@ export default function HomeScreen({navigation}) {
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>Sistem Komputer</Text>
             <Image
-              source={require('../../src/materi.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
                 width: 350,
                 height: 75,
@@ -57,7 +57,7 @@ export default function HomeScreen({navigation}) {
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>Komputer dan Jaringan</Text>
             <Image
-              source={require('../../src/materi.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
                 width: 350,
                 height: 75,
@@ -72,7 +72,7 @@ export default function HomeScreen({navigation}) {
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>Pemograman Dasar</Text>
             <Image
-              source={require('../../src/materi.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
                 width: 350,
                 height: 75,
@@ -87,7 +87,7 @@ export default function HomeScreen({navigation}) {
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>Dasar Desain Grafiis</Text>
             <Image
-              source={require('../../src/materi.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
                 width: 350,
                 height: 75,
@@ -104,7 +104,7 @@ export default function HomeScreen({navigation}) {
               Simulasi dan Komunikasi Digital
             </Text>
             <Image
-              source={require('../../src/materi.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
                 width: 350,
                 height: 75,

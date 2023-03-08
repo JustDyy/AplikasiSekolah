@@ -3209,9 +3209,9 @@
   "version" "4.0.1"
 
 "esquery@^1.4.0":
-  "integrity" "sha512-cCDispWt5vHHtwMY2YrAQ4ibFkAL8RbH5YGBnZBc90MolvvfkkQcJro/aZiAQUlQ3qgrYS6D6v8Gc5G5CQsc9w=="
-  "resolved" "https://registry.npmjs.org/esquery/-/esquery-1.4.0.tgz"
-  "version" "1.4.0"
+  "integrity" "sha512-YQLXUplAwJgCydQ78IMJywZCceoqk1oH01OERdSAJc/7U2AylwjhSCLDEtqwg811idIS/9fIU5GjG73IgjKMVg=="
+  "resolved" "https://registry.npmjs.org/esquery/-/esquery-1.5.0.tgz"
+  "version" "1.5.0"
   dependencies:
     "estraverse" "^5.1.0"
 
@@ -3659,9 +3659,9 @@
     "type-fest" "^0.20.2"
 
 "globals@^13.9.0":
-  "integrity" "sha512-dkQ957uSRWHw7CFXLUtUHQI3g3aWApYhfNR2O6jn/907riyTYKVBmxYVROkBcY614FSSeSJh7Xm7SrUWCxvJMQ=="
-  "resolved" "https://registry.npmjs.org/globals/-/globals-13.19.0.tgz"
-  "version" "13.19.0"
+  "integrity" "sha512-Qg5QtVkCy/kv3FUSlu4ukeZDVf9ee0iXLAUYX13gbR17bnejFTzr4iS9bY7kwCf1NztRNm1t91fjOiyx4CSwPQ=="
+  "resolved" "https://registry.npmjs.org/globals/-/globals-13.20.0.tgz"
+  "version" "13.20.0"
   dependencies:
     "type-fest" "^0.20.2"
 

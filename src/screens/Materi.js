@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   View,
   Alert,
@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-export default function HomeScreen({navigation}) {
+export default function Materi({navigation}) {
   function _onPressButton() {
     Alert.alert('You tapped the button!');
   }
@@ -22,7 +22,7 @@ export default function HomeScreen({navigation}) {
     <>
       <View style={styles.pala}>
         <Image
-          source={require('../../src/font.png')}
+          source={require('../Assets/img/font.png')}
           style={{
             width: 150,
             height: 30,
@@ -47,7 +47,7 @@ export default function HomeScreen({navigation}) {
             </Text>
 
             <Image
-              source={require('../../src/mat-lanj.png')}
+              source={require('../Assets/img/mat-lanj.png')}
               style={{
                 width: 304,
                 height: 141.56,
@@ -69,7 +69,7 @@ export default function HomeScreen({navigation}) {
             </Text>
 
             <Image
-              source={require('../../src/mat-lanj.png')}
+              source={require('../Assets/img/mat-lanj.png')}
               style={{
                 width: 304,
                 height: 141.56,
@@ -91,7 +91,7 @@ export default function HomeScreen({navigation}) {
             </Text>
 
             <Image
-              source={require('../../src/mat-lanj.png')}
+              source={require('../Assets/img/mat-lanj.png')}
               style={{
                 width: 304,
                 height: 141.56,
@@ -113,7 +113,7 @@ export default function HomeScreen({navigation}) {
             </Text>
 
             <Image
-              source={require('../../src/mat-lanj.png')}
+              source={require('../Assets/img/mat-lanj.png')}
               style={{
                 width: 304,
                 height: 141.56,

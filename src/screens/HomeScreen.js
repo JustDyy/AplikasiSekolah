@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useContext} from 'react';
 import {
   View,
   Alert,
@@ -10,6 +10,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import AuthContext from '../contexts/AuthContext';
 
 export default function HomeScreen({navigation}) {
   function _onPressButton() {
@@ -20,6 +21,9 @@ export default function HomeScreen({navigation}) {
     Alert.alert('You long-pressed the button!');
   }
 
+  const {token} = useContext(AuthContext);
+  console.log(token);
+
   return (
     <>
       <StatusBar
@@ -27,7 +31,7 @@ export default function HomeScreen({navigation}) {
         barStyle="light-content"></StatusBar>
       <View style={styles.pala}>
         <Image
-          source={require('../../src/font.png')}
+          source={require('../Assets/img/font.png')}
           style={{
             width: 150,
             height: 30,
@@ -41,7 +45,7 @@ export default function HomeScreen({navigation}) {
         <TouchableOpacity onPress={_onPressButton}>
           <View style={styles.buttonHeader}>
             <Image
-              source={require('../../src/Avatar.png')}
+              source={require('../Assets/img/Avatar.png')}
               style={{
                 position: 'absolute',
                 marginLeft: 20,
@@ -59,7 +63,7 @@ export default function HomeScreen({navigation}) {
           <View style={styles.buttonkelas}>
             <Text style={styles.textkelas}>X RPL</Text>
             <Image
-              source={require('../../src/RPL1.png')}
+              source={require('../Assets/img/RPL1.png')}
               style={{
                 width: 350,
                 height: 75,
@@ -74,7 +78,7 @@ export default function HomeScreen({navigation}) {
           <View style={styles.buttonkelas}>
             <Text style={styles.textkelas1}>XI RPL</Text>
             <Image
-              source={require('../../src/Rpl2.png')}
+              source={require('../Assets/img/Rpl2.png')}
               style={{
                 width: 350,
                 height: 75,
@@ -89,7 +93,7 @@ export default function HomeScreen({navigation}) {
           <View style={styles.buttonkelas}>
             <Text style={styles.textkelas}>XII RPL</Text>
             <Image
-              source={require('../../src/RPL1.png')}
+              source={require('../Assets/img/RPL1.png')}
               style={{
                 width: 350,
                 height: 75,
