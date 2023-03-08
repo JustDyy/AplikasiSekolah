@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
-const BASE_URL = 'dulearn.rugefx.com';
+const BASE_URL = 'http://dulearn.rugefx.com';
 
 const apiClient = axios.create({
   baseURL: BASE_URL,
@@ -23,7 +23,9 @@ apiClient.interceptors.response.use(
     //     console.log('Token dihapus');
     //   });
     // }
-    console.error('Looks like there was a problem. Error : ' + res);
+    console.error(
+      'Looks like there was a problem. Error : ' + JSON.stringify(res.data),
+    );
     return Promise.reject(error);
   },
 );

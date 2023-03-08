@@ -43,7 +43,7 @@ const getData = async () => {
 };
 
 export default function LoginScreen({navigation}) {
-  const {login} = useContext(AuthContext);
+  const {login, token} = useContext(AuthContext);
 
   const [nisn, setNisn] = useState('');
   const [password, setPassword] = useState('');
@@ -57,65 +57,16 @@ export default function LoginScreen({navigation}) {
     }
     try {
       console.log(nisn + password);
-      await login({nisn, password});
+      await login({reg_num: nisn, password});
     } catch (error) {
       Alert.alert('Error', error.message);
     }
   }
 
-  // return (
-  //   <View style={{flex: 1, backgroundColor: color.col}}>
-  //     <StatusBar backgroundColor="#070B30" barStyle="dark-content" />
-  //     <View
-  //       style={{
-  //         flex: 1,
-  //         justifyContent: 'center',
-  //         alignItems: 'center',
-  //         gap: 0,
-  //       }}>
-  //       <Image source={image.logo} style={{width: 350, height: 90}} />
-  //       <View style={{marginLeft: 10}}>
-  //         <Text style={{fontSize: 25, fontWeight: 'bold'}}>
-  //           Welcome to Dulearn!
-  //         </Text>
-  //         <Text style={{fontSize: 15, fontWeight: 'bold'}}>
-  //           Please sign-in to your account and start the adventure
-  //         </Text>
-  //       </View>
-  //     </View>
+  useEffect(() => {
+    console.log(token);
+  }, []);
 
-  //     <View style={{height: 'auto'}}>
-  //       <FlatGrid
-  //         itemDimension={500}
-  //         data={[2]}
-  //         renderItem={({item}) => (
-  //           <View>
-  //             <TextInputNisn
-  //               state={nisn}
-  //               set={setNisn}
-  //               Icon="user"
-  //               placeholder="NISN"
-  //               isPassword={false}
-  //             />
-  //             <TextInputNisn
-  //               state={password}
-  //               set={setPassword}
-  //               Icon="lock"
-  //               placeholder="Password"
-  //               isPassword={true}
-  //             />
-  //             <LoginButton
-  //               text="Login"
-  //               color="#494C9F"
-  //               handlePress={() => kliklogin()}
-  //             />
-  //             <Menu SignupText="Registrasi" />
-  //           </View>
-  //         )}
-  //       />
-  //     </View>
-  //   </View>
-  // );
   return (
     <View style={{flex: 1, backgroundColor: color.col}}>
       <StatusBar backgroundColor="#070B30" barStyle="dark-content" />

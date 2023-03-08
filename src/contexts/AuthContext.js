@@ -12,7 +12,7 @@ export const AuthContextProvider = ({children}) => {
 
   async function getUserToken() {
     let userToken = await AsyncStorage.getItem('token_key');
-    userToken ? userToken : null;
+    return userToken ? userToken : null;
   }
 
   useEffect(() => {
@@ -26,8 +26,8 @@ export const AuthContextProvider = ({children}) => {
   const login = async payload => {
     try {
       const res = await apiClient.post('/api/auth/login', payload);
-      await AsyncStorage.setItem('token_key', res.data);
-      console.log(res.data);
+      await AsyncStorage.setItem('token_key', res.data.data);
+      console.log(res.data.data);
     } catch (e) {
       console.error(e);
     }
