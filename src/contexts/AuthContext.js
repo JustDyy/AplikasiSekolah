@@ -10,6 +10,22 @@ const AuthContext = createContext();
 export const AuthContextProvider = ({children}) => {
   const [token, setToken] = useState(null);
 
+  // const memoedToken
+
+  apiClient.interceptors.request.use(
+    config => {
+      if (!config.headers.Authorization) {
+        console.log("set header")
+        config.headers.Authorization = `Bearer ${token}`;
+      }
+
+      return config;
+    },
+    error => {
+      return Promise.reject(error);
+    },
+  );
+
   async function getUserToken() {
     let userToken = await AsyncStorage.getItem('token_key');
     return userToken ? userToken : null;
@@ -27,6 +43,7 @@ export const AuthContextProvider = ({children}) => {
     try {
       const res = await apiClient.post('/api/auth/login', payload);
       await AsyncStorage.setItem('token_key', res.data.data);
+      setToken(res.data.data);
       console.log(res.data.data);
     } catch (e) {
       console.error(e);
@@ -34,7 +51,12 @@ export const AuthContextProvider = ({children}) => {
   };
 
   const logout = async () => {
-    await apiClient.get('/api/auth/logout');
+    const res = await apiClient.get('/api/auth/logout', {}, {
+      Authentication : `${token}`
+    });
+    if(res.data.success === "Success"){
+      console.log("YA")
+    }
     await AsyncStorage.removeItem('token_key');
     setToken(null);
   };

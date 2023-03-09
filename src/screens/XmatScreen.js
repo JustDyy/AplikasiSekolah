@@ -37,7 +37,7 @@ export default function HomeScreen({navigation}) {
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.judul}>Materi</Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate('materi')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>Sistem Komputer</Text>
             <Image
@@ -53,7 +53,7 @@ export default function HomeScreen({navigation}) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>Komputer dan Jaringan</Text>
             <Image
@@ -68,7 +68,7 @@ export default function HomeScreen({navigation}) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>Pemograman Dasar</Text>
             <Image
@@ -83,7 +83,7 @@ export default function HomeScreen({navigation}) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>Dasar Desain Grafiis</Text>
             <Image
@@ -98,7 +98,7 @@ export default function HomeScreen({navigation}) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>
               Simulasi dan Komunikasi Digital

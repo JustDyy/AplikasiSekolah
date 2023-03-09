@@ -21,7 +21,7 @@ export default function HomeScreen({navigation}) {
     Alert.alert('You long-pressed the button!');
   }
 
-  const {token} = useContext(AuthContext);
+  const {token, logout} = useContext(AuthContext);
   console.log(token);
 
   return (
@@ -42,7 +42,7 @@ export default function HomeScreen({navigation}) {
         />
       </View>
       <ScrollView contentContainerStyle={styles.container}>
-        <TouchableOpacity onPress={_onPressButton}>
+        <TouchableOpacity onPress={() => navigation.navigate('Akun')}>
           <View style={styles.buttonHeader}>
             <Image
               source={require('../Assets/img/Avatar.png')}
@@ -59,7 +59,8 @@ export default function HomeScreen({navigation}) {
 
         <Text style={styles.judul}>Classes</Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Xmat')}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Materials', {screen: 'XMat'})}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textkelas}>X RPL</Text>
             <Image
@@ -74,7 +75,8 @@ export default function HomeScreen({navigation}) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Materials', {screen: 'XIMat'})}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textkelas1}>XI RPL</Text>
             <Image
@@ -89,7 +91,8 @@ export default function HomeScreen({navigation}) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Materials', {screen: 'XIIMat'})}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textkelas}>XII RPL</Text>
             <Image
@@ -117,6 +120,15 @@ export default function HomeScreen({navigation}) {
                 position: 'absolute',
               }}
             />
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          onPress={() => {
+            logout();
+          }}>
+          <View style={styles.buttonHeader}>
+            <Text style={styles.buttonText}>Log out</Text>
           </View>
         </TouchableOpacity>
       </ScrollView>

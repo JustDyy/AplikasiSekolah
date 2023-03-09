@@ -67,9 +67,9 @@ export default function Koleksi({navigation}) {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Diskusi')}>
             <View style={styles.buttonkelas}>
-              <Text style={styles.textmateri}>Memahami sistem bilangan</Text>
+              <Text style={styles.textmateri}>Membuat Design dengan Figma</Text>
               <Text style={styles.textsubmateri}>
                 Sistem Bilangan atau Number System adalah Suatu cara untuk
                 mewakili besaran dari suatu item fisik. Sistem Bilangan

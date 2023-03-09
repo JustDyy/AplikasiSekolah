@@ -2,6 +2,7 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import LoginScreen from '../screens/auth/LoginScreen';
 import ROUTES from '../constant/route';
+import BottomTabNavigator from './BottomTabNavigator'
 // import HomeScreen from '../screenss/HomeScreen';
 
 const Stack = createStackNavigator();
@@ -11,6 +12,7 @@ function AuthNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen name={ROUTES.LOGIN} component={LoginScreen} />
+      <Stack.Screen name={ROUTES.HOME} component={BottomTabNavigator} />  
     </Stack.Navigator>
   );
 }

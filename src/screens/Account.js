@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   View,
   Alert,
@@ -11,8 +11,11 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import FlatGrid from 'react-native-super-grid';
+import AuthContext from '../contexts/AuthContext';
 
 export default function Account({navigation}) {
+const { logout } = useContext(AuthContext);
+
   function _onPressButton() {
     Alert.alert('You tapped the button!');
   }
@@ -115,6 +118,7 @@ export default function Account({navigation}) {
                     },
                     {
                       text: 'Yes',
+                      onPress: () => logout(),
                       // onPress: () =>
                       //   AsyncStorage.clear().then(
                       //     navigation.navigate(ROUTES.LOGIN),

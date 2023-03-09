@@ -33,10 +33,10 @@ export default function Materi({navigation}) {
         />
       </View>
       <View style={styles.bungkusjudul}>
-        <Text style={styles.judul}>Sistem Komputer</Text>
+        <Text style={styles.judul}>Materi</Text>
       </View>
       <ScrollView contentContainerStyle={styles.container}>
-        <TouchableOpacity onPress={() => navigation.navigate('diskus')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Diskusi')}>
           <View style={styles.buttonkelas}>
             <Text style={styles.textmateri}>Memahami sistem bilangan</Text>
             <Text style={styles.textsubmateri}>

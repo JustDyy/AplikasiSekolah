@@ -37,9 +37,9 @@ export default function XIImatScreen({navigation}) {
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.judul}>Materi XII</Text>
 
-        <TouchableOpacity onPress={() => navigation.navigate('materi')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
           <View style={styles.buttonkelas}>
-            <Text style={styles.textmateri}>Sistem Komputer</Text>
+            <Text style={styles.textmateri}>PWPB</Text>
             <Image
               source={require('../Assets/img/materi.png')}
               style={{
@@ -53,9 +53,9 @@ export default function XIImatScreen({navigation}) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
           <View style={styles.buttonkelas}>
-            <Text style={styles.textmateri}>Komputer dan Jaringan</Text>
+            <Text style={styles.textmateri}>PBO</Text>
             <Image
               source={require('../Assets/img/materi.png')}
               style={{
@@ -68,41 +68,9 @@ export default function XIImatScreen({navigation}) {
           </View>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
           <View style={styles.buttonkelas}>
-            <Text style={styles.textmateri}>Pemograman Dasar</Text>
-            <Image
-              source={require('../Assets/img/materi.png')}
-              style={{
-                width: 350,
-                height: 75,
-                borderRadius: 10,
-                position: 'absolute',
-              }}
-            />
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
-          <View style={styles.buttonkelas}>
-            <Text style={styles.textmateri}>Dasar Desain Grafiis</Text>
-            <Image
-              source={require('../Assets/img/materi.png')}
-              style={{
-                width: 350,
-                height: 75,
-                borderRadius: 10,
-                position: 'absolute',
-              }}
-            />
-          </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity onPress={() => navigation.navigate('login')}>
-          <View style={styles.buttonkelas}>
-            <Text style={styles.textmateri}>
-              Simulasi dan Komunikasi Digital
-            </Text>
+            <Text style={styles.textmateri}>PKKWU</Text>
             <Image
               source={require('../Assets/img/materi.png')}
               style={{
