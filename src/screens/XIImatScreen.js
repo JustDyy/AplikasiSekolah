@@ -1,18 +1,17 @@
-import React, {useContext} from 'react';
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
+import * as React from 'react';
 import {
   View,
   Alert,
   StyleSheet,
   Text,
-  StatusBar,
   TouchableOpacity,
   Image,
   ScrollView,
 } from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import AuthContext from '../contexts/AuthContext';
 
-export default function HomeScreen({navigation}) {
+export default function XIImatScreen({navigation}) {
   function _onPressButton() {
     Alert.alert('You tapped the button!');
   }
@@ -21,14 +20,8 @@ export default function HomeScreen({navigation}) {
     Alert.alert('You long-pressed the button!');
   }
 
-  const {token} = useContext(AuthContext);
-  console.log(token);
-
   return (
     <>
-      <StatusBar
-        backgroundColor={Colors.transparent}
-        barStyle="light-content"></StatusBar>
       <View style={styles.pala}>
         <Image
           source={require('../Assets/img/font.png')}
@@ -42,28 +35,29 @@ export default function HomeScreen({navigation}) {
         />
       </View>
       <ScrollView contentContainerStyle={styles.container}>
-        <TouchableOpacity onPress={_onPressButton}>
-          <View style={styles.buttonHeader}>
+        <Text style={styles.judul}>Materi XII</Text>
+
+        <TouchableOpacity onPress={() => navigation.navigate('materi')}>
+          <View style={styles.buttonkelas}>
+            <Text style={styles.textmateri}>Sistem Komputer</Text>
             <Image
-              source={require('../Assets/img/Avatar.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
+                width: 350,
+                height: 75,
+                borderRadius: 10,
+                marginTop: 40,
                 position: 'absolute',
-                marginLeft: 20,
-                width: 80,
-                height: 110,
               }}
             />
-            <Text style={styles.buttonText}>Welcome Dulern</Text>
           </View>
         </TouchableOpacity>
 
-        <Text style={styles.judul}>Classes</Text>
-
-        <TouchableOpacity onPress={() => navigation.navigate('Xmat')}>
+        <TouchableOpacity onPress={() => navigation.navigate('login')}>
           <View style={styles.buttonkelas}>
-            <Text style={styles.textkelas}>X RPL</Text>
+            <Text style={styles.textmateri}>Komputer dan Jaringan</Text>
             <Image
-              source={require('../Assets/img/RPL1.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
                 width: 350,
                 height: 75,
@@ -76,9 +70,9 @@ export default function HomeScreen({navigation}) {
 
         <TouchableOpacity onPress={() => navigation.navigate('login')}>
           <View style={styles.buttonkelas}>
-            <Text style={styles.textkelas1}>XI RPL</Text>
+            <Text style={styles.textmateri}>Pemograman Dasar</Text>
             <Image
-              source={require('../Assets/img/Rpl2.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
                 width: 350,
                 height: 75,
@@ -91,9 +85,9 @@ export default function HomeScreen({navigation}) {
 
         <TouchableOpacity onPress={() => navigation.navigate('login')}>
           <View style={styles.buttonkelas}>
-            <Text style={styles.textkelas}>XII RPL</Text>
+            <Text style={styles.textmateri}>Dasar Desain Grafiis</Text>
             <Image
-              source={require('../Assets/img/RPL1.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
                 width: 350,
                 height: 75,
@@ -104,15 +98,16 @@ export default function HomeScreen({navigation}) {
           </View>
         </TouchableOpacity>
 
-        <Text style={styles.judul}>Materi Terakhir</Text>
-
-        <TouchableOpacity onPress={() => navigation.navigate('Materi')}>
-          <View style={styles.buttonMateri}>
+        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+          <View style={styles.buttonkelas}>
+            <Text style={styles.textmateri}>
+              Simulasi dan Komunikasi Digital
+            </Text>
             <Image
-              source={require('../Assets/img/homei.png')}
+              source={require('../Assets/img/materi.png')}
               style={{
                 width: 350,
-                height: 141.56,
+                height: 75,
                 borderRadius: 10,
                 position: 'absolute',
               }}
@@ -129,6 +124,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     alignItems: 'center',
     backgroundColor: '#1F1F39',
+    flex: 1,
   },
 
   pala: {
@@ -147,8 +143,8 @@ const styles = StyleSheet.create({
   judul: {
     fontSize: 30,
     fontWeight: 'bold',
-    marginBottom: 10,
-    textAlign: 'left',
+    marginBottom: 25,
+    marginTop: 20,
     fontFamily: 'Inter_Bold',
     color: '#FFFFFF',
   },
@@ -162,20 +158,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 
-  textkelas: {
-    textAlign: 'right',
-    marginRight: 15,
-    fontSize: 25,
-    zIndex: 10,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-  },
-
-  textkelas1: {
-    textAlign: 'left',
-    marginLeft: 15,
-    fontSize: 25,
-    zIndex: 10,
+  textmateri: {
+    textAlign: 'center',
+    fontSize: 20,
+    zIndex: 5,
     fontWeight: 'bold',
     color: '#FFFFFF',
   },
@@ -184,14 +170,5 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     padding: 20,
     color: 'white',
-  },
-  buttonMateri: {
-    marginTop: 10,
-    marginBottom: 30,
-    width: 350,
-    height: 141.56,
-    backgroundColor: '#42489E',
-
-    borderRadius: 10,
   },
 });
